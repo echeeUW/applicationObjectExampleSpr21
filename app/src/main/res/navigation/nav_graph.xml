@@ -9,11 +9,7 @@
         android:id="@+id/emailDetailFragment"
         android:name="edu.uw.echee.applicationobjectexample.EmailDetailFragment"
         android:label="Email Details"
-        tools:layout="@layout/fragment_email_detail" >
-        <argument
-            android:name="email"
-            app:argType="edu.uw.echee.applicationobjectexample.Email" />
-    </fragment>
+        tools:layout="@layout/fragment_email_detail" />
     <fragment
         android:id="@+id/otherFragment"
         android:name="edu.uw.echee.applicationobjectexample.OtherFragment"

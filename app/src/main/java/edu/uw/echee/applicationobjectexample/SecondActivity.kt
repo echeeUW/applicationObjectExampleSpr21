@@ -11,11 +11,9 @@ import edu.uw.echee.applicationobjectexample.databinding.ActivitySecondBinding
 
 private const val EMAIL_KEY = "email"
 
-fun launchSecondActivity(context: Context, email: Email) = with(context) {
+fun launchSecondActivity(context: Context) = with(context) {
 
-    startActivity(Intent(this, SecondActivity::class.java).apply {
-        putExtra(EMAIL_KEY, email)
-    })
+    startActivity(Intent(this, SecondActivity::class.java))
 }
 
 
@@ -27,20 +25,5 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater).apply { setContentView(root) }
-        with(binding) {
-
-            navController.setGraph(R.navigation.nav_graph, intent.extras)
-
-            // The following is the equivalent to:
-//            navController.setGraph(R.navigation.nav_graph, Bundle().apply {
-//                putParcelable("email", intent.extras?.getParcelable<Email>(EMAIL_KEY))
-//                putInt("playcount", 12345)
-//            })
-
-
-
-
-
-            }
     }
 }

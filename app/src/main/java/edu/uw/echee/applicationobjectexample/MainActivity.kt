@@ -4,29 +4,41 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.DisplayMetrics
+import android.util.Log
 import edu.uw.echee.applicationobjectexample.databinding.ActivityMainBinding
 import kotlinx.parcelize.Parcelize
+
+var email: Email = Email("foo", "baz")
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.i("emailApp", "MainActivity has booted")
+
+        val emailApp: EmailApplication = this.applicationContext as EmailApplication
+
+        val myEmail = emailApp.email
+
+
+
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
         with(binding) {
 
             title = "Start"
 
-            val myEmail = Email(
-                sender = "echee@uw.edu",
-                msg = "Go hard or go home. yolo. floss."
-            )
+            rcEmails.adapter = EmailAdapter(emailApp.emails)
+
 
             fabSend.setOnClickListener {
-                launchSecondActivity(this@MainActivity, myEmail)
+                launchSecondActivity(this@MainActivity)
             }
 
         }
+
+
     }
 }
 
