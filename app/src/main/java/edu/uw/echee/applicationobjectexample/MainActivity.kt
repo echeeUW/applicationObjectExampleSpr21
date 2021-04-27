@@ -2,8 +2,10 @@ package edu.uw.echee.applicationobjectexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.DisplayMetrics
 import edu.uw.echee.applicationobjectexample.databinding.ActivityMainBinding
+import kotlinx.parcelize.Parcelize
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,15 +15,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
         with(binding) {
 
+            title = "Start"
+
+            val myEmail = Email(
+                sender = "echee@uw.edu",
+                msg = "Go hard or go home. yolo. floss."
+            )
+
+            fabSend.setOnClickListener {
+                launchSecondActivity(this@MainActivity, myEmail)
+            }
+
         }
     }
 }
 
-
+@Parcelize
 data class Email(
         val sender: String,
         val msg: String
-)
+): Parcelable
 
 
 

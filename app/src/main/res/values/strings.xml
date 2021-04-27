@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Application Object Example Spr21</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="detail_email">This is Email Detail Fragment</string>
 </resources>
