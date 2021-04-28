@@ -27,8 +27,11 @@ class EmailDetailFragment : Fragment() {
 
         Toast.makeText(context, "Fragment is holding onto: $receivedEmail", Toast.LENGTH_SHORT).show()
 
-        /// on buttonClick {
-        navController.navigate(NavGraphDirections.actionGlobalOtherFragment(receivedEmail))
+        with(binding) {
+            btnLaunchOtherFragment.setOnClickListener {
+                navController.navigate(NavGraphDirections.actionGlobalOtherFragment(receivedEmail))
+            }
+        }
 
         return binding.root
     }
