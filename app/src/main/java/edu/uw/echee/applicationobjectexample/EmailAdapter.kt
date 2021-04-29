@@ -9,6 +9,8 @@ class EmailAdapter(
     private val emails: List<Email>
 ): RecyclerView.Adapter<EmailAdapter.EmailViewHolder>() {
 
+    var onEmailClickedListener: (Email) -> Unit = {}
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmailViewHolder {
         val binding = ItemEmailBinding.inflate(LayoutInflater.from(parent.context))
         return EmailViewHolder(binding)
@@ -22,6 +24,10 @@ class EmailAdapter(
         with(holder.binding) {
             tvEmailAddress.text = email.sender
             tvMsg.text = email.msg
+
+            root.setOnClickListener {
+                onEmailClickedListener(email)
+            }
         }
     }
 
