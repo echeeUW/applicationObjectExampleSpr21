@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/emailDetailFragment"
-        android:name="edu.uw.echee.applicationobjectexample.EmailDetailFragment"
+        android:name="edu.uw.echee.applicationobjectexample.fragment.EmailDetailFragment"
         android:label="Email Details"
         tools:layout="@layout/fragment_email_detail" />
     <fragment
         android:id="@+id/otherFragment"
-        android:name="edu.uw.echee.applicationobjectexample.OtherFragment"
+        android:name="edu.uw.echee.applicationobjectexample.fragment.OtherFragment"
         android:label="fragment_other"
         tools:layout="@layout/fragment_other" >
         <argument
             android:name="email"
-            app:argType="edu.uw.echee.applicationobjectexample.Email" />
+            app:argType="edu.uw.echee.applicationobjectexample.model.Email" />
     </fragment>
     <action
         android:id="@+id/action_global_otherFragment"

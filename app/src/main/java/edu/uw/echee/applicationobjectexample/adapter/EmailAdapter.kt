@@ -1,9 +1,10 @@
-package edu.uw.echee.applicationobjectexample
+package edu.uw.echee.applicationobjectexample.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import edu.uw.echee.applicationobjectexample.databinding.ItemEmailBinding
+import edu.uw.echee.applicationobjectexample.model.Email
 
 class EmailAdapter(
     private val emails: List<Email>

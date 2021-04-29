@@ -1,4 +1,4 @@
-package edu.uw.echee.applicationobjectexample
+package edu.uw.echee.applicationobjectexample.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import edu.uw.echee.applicationobjectexample.activity.SecondActivity
 
 class OtherFragment : Fragment() {
 

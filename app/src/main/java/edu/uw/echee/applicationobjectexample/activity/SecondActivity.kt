@@ -1,4 +1,4 @@
-package edu.uw.echee.applicationobjectexample
+package edu.uw.echee.applicationobjectexample.activity
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import edu.uw.echee.applicationobjectexample.EmailApplication
+import edu.uw.echee.applicationobjectexample.R
 import edu.uw.echee.applicationobjectexample.databinding.ActivitySecondBinding
 
 private const val EMAIL_KEY = "email"
@@ -26,6 +28,8 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater).apply { setContentView(root) }
+
+        val app = this.application as EmailApplication
 
         setupActionBarWithNavController(navController)
     }
